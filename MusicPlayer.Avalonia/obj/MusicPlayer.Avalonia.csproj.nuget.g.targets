@@ -4,8 +4,8 @@
     <Import Project="$(NuGetPackageRoot)skiasharp.nativeassets.webassembly\2.88.3\buildTransitive\netstandard1.0\SkiaSharp.NativeAssets.WebAssembly.targets" Condition="Exists('$(NuGetPackageRoot)skiasharp.nativeassets.webassembly\2.88.3\buildTransitive\netstandard1.0\SkiaSharp.NativeAssets.WebAssembly.targets')" />
     <Import Project="$(NuGetPackageRoot)selenium.webdriver.chromedriver\117.0.5938.8800\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('$(NuGetPackageRoot)selenium.webdriver.chromedriver\117.0.5938.8800\build\Selenium.WebDriver.ChromeDriver.targets')" />
     <Import Project="$(NuGetPackageRoot)selenium.webdriver\4.12.4\buildTransitive\Selenium.WebDriver.targets" Condition="Exists('$(NuGetPackageRoot)selenium.webdriver\4.12.4\buildTransitive\Selenium.WebDriver.targets')" />
-    <Import Project="$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\2.8.2.3\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.targets" Condition="Exists('$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\2.8.2.3\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.targets')" />
     <Import Project="$(NuGetPackageRoot)avalonia.buildservices\0.0.29\buildTransitive\Avalonia.BuildServices.targets" Condition="Exists('$(NuGetPackageRoot)avalonia.buildservices\0.0.29\buildTransitive\Avalonia.BuildServices.targets')" />
     <Import Project="$(NuGetPackageRoot)avalonia\11.0.4\buildTransitive\Avalonia.targets" Condition="Exists('$(NuGetPackageRoot)avalonia\11.0.4\buildTransitive\Avalonia.targets')" />
+    <Import Project="$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\2.8.2.3\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.targets" Condition="Exists('$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly\2.8.2.3\buildTransitive\netstandard1.0\HarfBuzzSharp.NativeAssets.WebAssembly.targets')" />
   </ImportGroup>
 </Project>

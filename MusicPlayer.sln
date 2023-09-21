@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicPlayer.Avalonia", "MusicPlayer.Avalonia\MusicPlayer.Avalonia.csproj", "{4C754CA4-8DC7-4C3E-B518-9A2686EBD9F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{4EDFD80D-3369-435B-B29A-EF3F0CC9F056}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4C754CA4-8DC7-4C3E-B518-9A2686EBD9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C754CA4-8DC7-4C3E-B518-9A2686EBD9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C754CA4-8DC7-4C3E-B518-9A2686EBD9F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EDFD80D-3369-435B-B29A-EF3F0CC9F056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDFD80D-3369-435B-B29A-EF3F0CC9F056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDFD80D-3369-435B-B29A-EF3F0CC9F056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDFD80D-3369-435B-B29A-EF3F0CC9F056}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

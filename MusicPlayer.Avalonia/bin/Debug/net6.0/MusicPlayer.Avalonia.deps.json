@@ -14,7 +14,9 @@
           "Avalonia.Fonts.Inter": "11.0.4",
           "Avalonia.ReactiveUI": "11.0.4",
           "Avalonia.Themes.Fluent": "11.0.4",
+          "BusinessLogicLayer": "1.0.0",
           "HtmlAgilityPack": "1.11.53",
+          "MessageBox.Avalonia": "3.1.4",
           "MvvmLightLibs": "5.4.1.1",
           "Selenium.Support": "4.12.4",
           "Selenium.WebDriver": "4.12.4",
@@ -194,7 +196,7 @@
         "dependencies": {
           "Avalonia": "11.0.4",
           "ReactiveUI": "18.3.1",
-          "System.Reactive": "5.0.0"
+          "System.Reactive": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Avalonia.ReactiveUI.dll": {
@@ -277,6 +279,17 @@
           }
         }
       },
+      "ColorTextBlock.Avalonia/11.0.1": {
+        "dependencies": {
+          "Avalonia": "11.0.4"
+        },
+        "runtime": {
+          "lib/net6.0/ColorTextBlock.Avalonia.dll": {
+            "assemblyVersion": "11.0.1.0",
+            "fileVersion": "11.0.1.0"
+          }
+        }
+      },
       "CommonServiceLocator/2.0.2": {
         "dependencies": {
           "Microsoft.NETCore.App": "1.0.5"
@@ -288,9 +301,21 @@
           }
         }
       },
+      "DialogHost.Avalonia/0.7.6": {
+        "dependencies": {
+          "Avalonia": "11.0.4",
+          "System.Reactive": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DialogHost.Avalonia.dll": {
+            "assemblyVersion": "0.7.6.0",
+            "fileVersion": "0.7.6.0"
+          }
+        }
+      },
       "DynamicData/7.9.5": {
         "dependencies": {
-          "System.Reactive": "5.0.0"
+          "System.Reactive": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/DynamicData.dll": {
@@ -419,6 +444,31 @@
             "rid": "win7-x86",
             "assetType": "native",
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Markdown.Avalonia.Tight/11.0.1": {
+        "dependencies": {
+          "Avalonia": "11.0.4",
+          "ColorTextBlock.Avalonia": "11.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Markdown.Avalonia.dll": {
+            "assemblyVersion": "11.0.1.0",
+            "fileVersion": "11.0.1.0"
+          }
+        }
+      },
+      "MessageBox.Avalonia/3.1.4": {
+        "dependencies": {
+          "Avalonia": "11.0.4",
+          "DialogHost.Avalonia": "0.7.6",
+          "Markdown.Avalonia.Tight": "11.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MsBox.Avalonia.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1516,11 +1566,11 @@
           "System.Threading": "4.0.11"
         }
       },
-      "System.Reactive/5.0.0": {
+      "System.Reactive/6.0.0": {
         "runtime": {
-          "lib/net5.0/System.Reactive.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.0.1"
+          "lib/net6.0/System.Reactive.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.1"
           }
         }
       },
@@ -1953,6 +2003,17 @@
             "fileVersion": "0.15.0.0"
           }
         }
+      },
+      "BusinessLogicLayer/1.0.0": {
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.53",
+          "Selenium.Support": "4.12.4",
+          "Selenium.WebDriver": "4.12.4",
+          "Selenium.WebDriver.ChromeDriver": "117.0.5938.8800"
+        },
+        "runtime": {
+          "BusinessLogicLayer.dll": {}
+        }
       }
     }
   },
@@ -2081,12 +2142,26 @@
       "path": "avalonia.x11/11.0.4",
       "hashPath": "avalonia.x11.11.0.4.nupkg.sha512"
     },
+    "ColorTextBlock.Avalonia/11.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5VsOHatZ0wBantC1o5SR8nWWnLZehq45B/LnGmU/h9v/IbOTrwAGRiV7O9odp+MJsKRgz8yLeShZq1Zk72nZ6w==",
+      "path": "colortextblock.avalonia/11.0.1",
+      "hashPath": "colortextblock.avalonia.11.0.1.nupkg.sha512"
+    },
     "CommonServiceLocator/2.0.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-OeAz2cDGiQuaxpJ2pUm1xyZyklT2HgP5LHoumI0o/pcXdTweJMjKHu92JKa33pZRCrRI0DdPcE5MGHk6GCpDMQ==",
       "path": "commonservicelocator/2.0.2",
       "hashPath": "commonservicelocator.2.0.2.nupkg.sha512"
+    },
+    "DialogHost.Avalonia/0.7.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LOqDKWjcDRqk1V0WcZ9s3ZfeK5byI13zxn+wCMTdbfR8nxKdegOaf2cRTrSpBKf64o07EwBOA2blNn+Bx4w1mA==",
+      "path": "dialoghost.avalonia/0.7.6",
+      "hashPath": "dialoghost.avalonia.0.7.6.nupkg.sha512"
     },
     "DynamicData/7.9.5": {
       "type": "package",
@@ -2143,6 +2218,20 @@
       "sha512": "sha512-uqX2Frwf9PW8MaY7PRNY6HM5BpW1D8oj1EdqzrmbEFD5nH63Yat3aEjN/tws6Tw6Fk7LwmLBvtUh32tTeTaHiA==",
       "path": "libuv/1.9.1",
       "hashPath": "libuv.1.9.1.nupkg.sha512"
+    },
+    "Markdown.Avalonia.Tight/11.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VwMZw9y/TgjQ+BfzhUsygoO7xkJAWW3eeUfelkLqU5zXUZhdfsJ2fg8HgSSMzuKI3rev84vwpP9HMBj1HLQ/tA==",
+      "path": "markdown.avalonia.tight/11.0.1",
+      "hashPath": "markdown.avalonia.tight.11.0.1.nupkg.sha512"
+    },
+    "MessageBox.Avalonia/3.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cfbnpum9xLW0QsGz8yCJY3KZa2IlAQAAHFQTW29dvyIwy3cjsdJyqIx3AmLX9lzF1hCguQrR8uymksdAFecBWw==",
+      "path": "messagebox.avalonia/3.1.4",
+      "hashPath": "messagebox.avalonia.3.1.4.nupkg.sha512"
     },
     "MicroCom.Runtime/0.11.0": {
       "type": "package",
@@ -2725,12 +2814,12 @@
       "path": "system.objectmodel/4.0.12",
       "hashPath": "system.objectmodel.4.0.12.nupkg.sha512"
     },
-    "System.Reactive/5.0.0": {
+    "System.Reactive/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
-      "path": "system.reactive/5.0.0",
-      "hashPath": "system.reactive.5.0.0.nupkg.sha512"
+      "sha512": "sha512-31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw==",
+      "path": "system.reactive/6.0.0",
+      "hashPath": "system.reactive.6.0.0.nupkg.sha512"
     },
     "System.Reflection/4.1.0": {
       "type": "package",
@@ -3046,6 +3135,11 @@
       "sha512": "sha512-QVo/Y39nTYcCKBqrZuwHjXdwaky0yTQPIT3qUTEEK2MZfDtZWrJ2XyZ59zH8LBgB2fL5cWaTuP2pBTpGz/GeDQ==",
       "path": "tmds.dbus.protocol/0.15.0",
       "hashPath": "tmds.dbus.protocol.0.15.0.nupkg.sha512"
+    },
+    "BusinessLogicLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

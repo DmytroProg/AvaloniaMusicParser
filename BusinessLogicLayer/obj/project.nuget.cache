@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "kWut4NzuXLNRO+ryVw0Qvtg0FG8lMKUE5iJx70psc2ISvcyJWW6DSD7w297LzH2ZkzG2qssrNtZUSHrKO0lJHQ==",
+  "dgSpecHash": "bzVO5uIdlZ0vHMkyFI5rT4lt0srDgEuFeN0ZDQS09A6lknREcGLJ+CT+g54YX/oETDvxSGNDO692MnI2CTnBEw==",
   "success": true,
   "projectFilePath": "E:\\Avalonia Project\\MusicPlayer\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\htmlagilitypack\\1.11.53\\htmlagilitypack.1.11.53.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.19.0\\microsoft.identitymodel.abstractions.6.19.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.logging\\6.19.0\\microsoft.identitymodel.logging.6.19.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.19.0\\microsoft.identitymodel.tokens.6.19.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\selenium.support\\4.12.4\\selenium.support.4.12.4.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\selenium.webdriver\\4.12.4\\selenium.webdriver.4.12.4.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\selenium.webdriver.chromedriver\\117.0.5938.8800\\selenium.webdriver.chromedriver.117.0.5938.8800.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

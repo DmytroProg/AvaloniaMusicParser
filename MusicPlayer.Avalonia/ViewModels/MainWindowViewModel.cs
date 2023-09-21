@@ -1,11 +1,10 @@
 ﻿using Avalonia.Controls;
+using BusinessLogicLayer.Services;
 using DynamicData;
 using GalaSoft.MvvmLight.Command;
-using HtmlAgilityPack;
-using MusicPlayer.Avalonia.Models;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
+using MsBox.Avalonia.Enums;
+using MsBox.Avalonia;
+using MusicPlayer.BusinessLogicLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,140 +12,160 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Tmds.DBus.Protocol;
+using OpenQA.Selenium.Interactions;
+using ReactiveUI;
+using System.Net;
+using Avalonia.Media.Imaging;
+using System.Text.RegularExpressions;
 
 namespace MusicPlayer.Avalonia.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private ChromeDriver chromeDriver;
-        private readonly string url = @"https://music.amazon.com/playlists/B01M11SBC8";
-        private Playlist _currentPlaylist;
+        private readonly SongParserService _songParserService;
+        private readonly AlbumParserService _albumParserService;
+        private Album _currentAlbum;
+        private Bitmap _avatar = null;
+        private bool _isEnabled;
+        private string _parsingProcess;
 
-        public string Greeting => "Welcome to Avalonia!";
+        public string Url { get; set; }
 
-        public ObservableCollection<string> Playlists { get; set; }
+        public Album CurrentAlbum {
+            get => _currentAlbum;
+            set => this.RaiseAndSetIfChanged(ref _currentAlbum, value);
+        }
+
+        public bool IsEnable {
+            get => _isEnabled;
+            set => this.RaiseAndSetIfChanged(ref _isEnabled, value);
+        }
+
+        public string ParsingProcess {
+            get => _parsingProcess; 
+            set => this.RaiseAndSetIfChanged(ref _parsingProcess, value);
+        }
+        
+        public Bitmap Avatar
+        {
+            get => _avatar;
+            set => this.RaiseAndSetIfChanged(ref _avatar, value);
+        }
+
         public ObservableCollection<Song> Songs { get; set; }
 
         public MainWindowViewModel()
         {
-            Playlists = new ObservableCollection<string>();
+            ParsingProcess = "";
+            IsEnable = true;
             Songs = new ObservableCollection<Song>();
+
+            _songParserService = new SongParserService();
+            _albumParserService = new AlbumParserService();
         }
 
         public ICommand ParseCommand
         {
-            get => new RelayCommand(() =>
+            get => new RelayCommand(() => ParseForSongs());
+        }
+
+        public void DownloadImage(string url)
+        {
+            using (WebClient client = new WebClient())
             {
-                chromeDriver = CreateChromeDriver(url);
-                ParseForSongs();
-            });
+                client.DownloadDataAsync(new Uri(url));
+                client.DownloadDataCompleted += DownloadComplete;
+            }
         }
 
-        private ChromeDriver CreateChromeDriver(string url)
+        private void DownloadComplete(object sender, DownloadDataCompletedEventArgs e)
         {
-            var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("--window-position=-32000,-32000");
-            var chromeDriveService = ChromeDriverService.CreateDefaultService();
-            chromeDriveService.HideCommandPromptWindow = true;
-            var driver = new ChromeDriver(chromeDriveService, chromeOptions);
-            driver.Navigate().GoToUrl(url);
-            return driver;
+            try
+            {
+                byte[] bytes = e.Result;
+
+                Stream stream = new MemoryStream(bytes);
+
+                var image = new Bitmap(stream);
+                Avatar = image;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                Avatar = null;
+            }
+
         }
 
-        private async Task<string> ReadHtmlDocument()
+        private void ClearAll()
         {
-            await Task.Delay(1000);
-            string dynamicHtml = chromeDriver.PageSource;
-
-            return dynamicHtml;
+            CurrentAlbum = null;
+            Songs.Clear();
+            Avatar = null;
         }
 
         private async Task ParseForSongs()
         {
-
-            List<Song> list = new List<Song>();
-
-            while (true)
-            {
-                var songs = (await GetSongs());
-                list.AddRange(songs);
-                list = list.Distinct().ToList();
-                if (list.Count >= 50)
-                    break;
-                MoveDownPage();
-            }
-
-            Songs.Clear();
-            Songs.AddRange(list);
-            Playlists.Clear();
-            Playlists.AddRange(list.Select(x => x.Album));
-
-            await Task.Run(() => chromeDriver.Close());
-        }
-
-        private async Task<HtmlDocument> LoadHtmlDocument()
-        {
-            var htmlString = await ReadHtmlDocument();
-
-            var doc = new HtmlDocument();
-            doc.LoadHtml(htmlString);
-
-            return doc;
-        }
-
-        private async Task<List<Song>> GetSongs()
-        {
-            var doc = await LoadHtmlDocument();
-
-            var details = GetDetails(doc);
-
+            ParsingProcess = "Parsing...";
+            IsEnable = false;
+            ClearAll();
             List<Song> songs = new List<Song>();
 
-            await Task.Run(() =>
-            {
-                for (int i = 0; i < details.Count; i += 3)
-                {
-                    songs.Add(new Song()
-                    {
-                        Name = details[i],
-                        Artist = details[i + 1],
-                        Album = details[i + 2]
-                    });
-                }
-            });
-
-            return songs;
-        }
-
-        private List<string> GetDetails(HtmlDocument doc)
-        {
-            return doc.DocumentNode.Descendants("div")
-                .Where(div => div.HasClass("content"))
-                .Select(div => div.Descendants("a"))
-                .SelectMany(a => a)
-                .Select(a => a.InnerText)
-                .ToList();
-        }
-
-        private void MoveDownPage()
-        {
-            new Actions(chromeDriver)
-                .ScrollByAmount(0, 1500)
-                .Perform();
-        }
-
-        ~MainWindowViewModel()
-        {
             try
             {
-                chromeDriver?.Close();
+                CurrentAlbum = await _albumParserService.GetAll(Url);
+                DownloadImage(CurrentAlbum.Avatar);
+
+                _songParserService.SongsCount = null;
+                if(int.TryParse(Regex.Match(CurrentAlbum.Description, @"^(\d+) ").Groups[1].Value, out int count))
+                {
+                    _songParserService.SongsCount = count;
+                }
+                songs.AddRange(await _songParserService.GetAll(Url));
+
+                if (Url.Contains("/albums/"))
+                {
+                    songs.ForEach(song =>
+                    {
+                        song.Album = CurrentAlbum.Name;
+                        song.Artist = CurrentAlbum.Artist;
+                    });
+                }
             }
-            catch (Exception) { }
+            catch (ArgumentNullException)
+            {
+                var message = MessageBoxManager.GetMessageBoxStandard("Message",
+                    "Please input a url",
+                ButtonEnum.Ok);
+
+                await message.ShowAsync();
+            }
+            catch (ArgumentException){
+                var message = MessageBoxManager.GetMessageBoxStandard("Message", 
+                    "Please input a url from amazon music in the category 'playlist'",
+                ButtonEnum.Ok);
+
+                await message.ShowAsync();
+            }
+            catch(Exception) {
+                var message = MessageBoxManager.GetMessageBoxStandard("Message",
+                        "Something went wrong while parsing the site, please try again later...",
+                    ButtonEnum.Ok);
+
+                await message.ShowAsync();
+            }
+            finally
+            {
+                IsEnable = true;
+                ParsingProcess = "Done!";
+                _albumParserService.CloseDriver();
+                _songParserService.CloseDriver();
+            }
+
+            Songs.AddRange(songs);
         }
     }
 }

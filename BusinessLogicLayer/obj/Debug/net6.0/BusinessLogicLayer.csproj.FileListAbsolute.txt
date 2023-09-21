@@ -1,0 +1,15 @@
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\bin\Debug\net6.0\selenium-manager\linux\selenium-manager
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\bin\Debug\net6.0\selenium-manager\macos\selenium-manager
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\bin\Debug\net6.0\selenium-manager\windows\selenium-manager.exe
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\bin\Debug\net6.0\BusinessLogicLayer.deps.json
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\bin\Debug\net6.0\BusinessLogicLayer.dll
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\bin\Debug\net6.0\BusinessLogicLayer.pdb
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.csproj.AssemblyReference.cache
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.AssemblyInfoInputs.cache
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.AssemblyInfo.cs
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.dll
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\refint\BusinessLogicLayer.dll
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.pdb
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\ref\BusinessLogicLayer.dll

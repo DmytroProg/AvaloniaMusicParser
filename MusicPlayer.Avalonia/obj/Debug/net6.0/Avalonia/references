@@ -22,13 +22,17 @@ C:\Users\User\.nuget\packages\avalonia.themes.fluent\11.0.4\lib\net6.0\Avalonia.
 C:\Users\User\.nuget\packages\avalonia.themes.simple\11.0.4\lib\net6.0\Avalonia.Themes.Simple.dll
 C:\Users\User\.nuget\packages\avalonia.win32\11.0.4\lib\net6.0\Avalonia.Win32.dll
 C:\Users\User\.nuget\packages\avalonia.x11\11.0.4\lib\net6.0\Avalonia.X11.dll
+E:\Avalonia Project\MusicPlayer\BusinessLogicLayer\obj\Debug\net6.0\ref\BusinessLogicLayer.dll
+C:\Users\User\.nuget\packages\colortextblock.avalonia\11.0.1\lib\net6.0\ColorTextBlock.Avalonia.dll
 C:\Users\User\.nuget\packages\commonservicelocator\2.0.2\lib\netcoreapp1.0\CommonServiceLocator.dll
+C:\Users\User\.nuget\packages\dialoghost.avalonia\0.7.6\lib\netstandard2.0\DialogHost.Avalonia.dll
 C:\Users\User\.nuget\packages\dynamicdata\7.9.5\lib\net6.0\DynamicData.dll
 C:\Users\User\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll
 C:\Users\User\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll
 C:\Users\User\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll
 C:\Users\User\.nuget\packages\harfbuzzsharp\2.8.2.3\lib\net6.0\HarfBuzzSharp.dll
 C:\Users\User\.nuget\packages\htmlagilitypack\1.11.53\lib\netstandard2.0\HtmlAgilityPack.dll
+C:\Users\User\.nuget\packages\markdown.avalonia.tight\11.0.1\lib\net6.0\Markdown.Avalonia.dll
 C:\Users\User\.nuget\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll
 C:\Users\User\.nuget\packages\microsoft.codeanalysis.csharp\3.8.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\User\.nuget\packages\microsoft.codeanalysis.csharp.scripting\3.8.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Scripting.dll
@@ -43,6 +47,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\Micros
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\Microsoft.Win32.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\Microsoft.Win32.Registry.dll
 C:\Users\User\.nuget\packages\microsoft.win32.systemevents\7.0.0\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\.nuget\packages\messagebox.avalonia\3.1.4\lib\netstandard2.0\MsBox.Avalonia.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\mscorlib.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\netstandard.dll
 C:\Users\User\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll
@@ -129,7 +134,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\System
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\System.Numerics.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\System.Numerics.Vectors.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\System.ObjectModel.dll
-C:\Users\User\.nuget\packages\system.reactive\5.0.0\lib\net5.0\System.Reactive.dll
+C:\Users\User\.nuget\packages\system.reactive\6.0.0\lib\net6.0\System.Reactive.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\System.Reflection.DispatchProxy.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\System.Reflection.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.21\ref\net6.0\System.Reflection.Emit.dll

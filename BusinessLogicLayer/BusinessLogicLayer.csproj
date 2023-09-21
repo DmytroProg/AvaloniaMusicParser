@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.53" />
+    <PackageReference Include="Selenium.Support" Version="4.12.4" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.12.4" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="117.0.5938.8800" />
+  </ItemGroup>
+
 </Project>
